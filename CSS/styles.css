@@ -1,0 +1,105 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Topbar Styles */
+.topbar {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.topbar h1 {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: inline-block;
+    float: right;
+    margin-right: 1rem;
+}
+
+.nav-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Shop Section */
+.shop-section, .about-section, .more-articles {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.item {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.item img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.item h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.item p {
+    color: #555;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
