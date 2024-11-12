@@ -9,6 +9,7 @@
 body {
     background-color: #f4f4f9;
     color: #333;
+    padding: 0 20px;
 }
 
 /* Topbar */
@@ -123,6 +124,9 @@ nav a:hover {
     height: 250px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-card:hover {
@@ -133,27 +137,26 @@ nav a:hover {
 .product-card h3 {
     font-size: 1.5rem;
     margin: 10px 0;
+    color: #fff;
 }
 
 .product-card p {
     font-size: 1.2rem;
-    color: #444;
+    color: #fff;
 }
 
-.product-card::before {
-    content: '';
+.product-card .overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border-radius: 8px;
-    z-index: 1;
-}
-
-.product-card h3, .product-card p {
-    z-index: 2;
 }
 
 /* Footer */
