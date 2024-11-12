@@ -7,99 +7,74 @@
     <link rel="stylesheet" href="./CSS/styles.css">
 </head>
 <body>
+
     <!-- Topbar -->
     <header class="topbar">
-        <div class="container">
-            <div class="logo">
-                <img src="./Images/logo.png" alt="CD Studios Logo">
-            </div>
-            <nav class="nav-links">
-                <ul>
-                    <li><a href="#shop">Shop</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <img src="./Images/logo.png" alt="CD Studios Logo" class="logo">
+        <nav>
+            <a href="#home">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#about">Nosotros</a>
+            <a href="#contact">Contacto</a>
+        </nav>
     </header>
 
-    <!-- Featured Products Section -->
-
-<div class="products">
-    <div class="product" onclick="window.location.href='product1.html'">
-        <h3>Producto 1</h3>
-        <p>Precio: $10</p>
-    </div>
-    <div class="product" onclick="window.location.href='product2.html'">
-        <h3>Producto 2</h3>
-        <p>Precio: $15</p>
-    </div>
-    <div class="product" onclick="window.location.href='product3.html'">
-        <h3>Producto 3</h3>
-        <p>Precio: $20</p>
-    </div>
-    <div class="product" onclick="window.location.href='product4.html'">
-        <h3>Producto 4</h3>
-        <p>Precio: $25</p>
-    </div>
-</div>
-
-    <!-- Introduction Section -->
-    <section class="introduction">
-        <h2>Welcome to CD Studios</h2>
-        <p>Explore our top-quality products and services tailored just for you!</p>
+    <!-- Productos Destacados -->
+    <section class="featured-products" id="productos">
+        <div class="featured-product" id="product1">
+            <div class="product-background" style="background-image: url('./Images/product1.jpg');">
+                <h2>Producto Destacado 1</h2>
+                <p>Precio: $10</p>
+            </div>
+        </div>
+        <div class="featured-product" id="product2">
+            <div class="product-background" style="background-image: url('./Images/product2.jpg');">
+                <h2>Producto Destacado 2</h2>
+                <p>Precio: $15</p>
+            </div>
+        </div>
+        <div class="featured-product" id="product3">
+            <div class="product-background" style="background-image: url('./Images/product3.jpg');">
+                <h2>Producto Destacado 3</h2>
+                <p>Precio: $20</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Product Grid Section -->
-    <section class="product-grid">
-        <h2>Our Products</h2>
-        <div class="grid">
-            <div class="product">
-                <a href="product4.html" target="_blank">Product 1</a>
-                <p>$15.00</p>
+    <!-- Productos en Venta -->
+    <section class="products">
+        <div class="product-card" onclick="window.location.href='#'">
+            <div class="product-background" style="background-image: url('./Images/product4.jpg');">
+                <h3>Producto 4</h3>
+                <p>Precio: $30</p>
             </div>
-            <div class="product">
-                <a href="product5.html" target="_blank">Product 2</a>
-                <p>$18.00</p>
+        </div>
+        <div class="product-card" onclick="window.location.href='#'">
+            <div class="product-background" style="background-image: url('./Images/product5.jpg');">
+                <h3>Producto 5</h3>
+                <p>Precio: $25</p>
             </div>
-            <div class="product">
-                <a href="product6.html" target="_blank">Product 3</a>
-                <p>$22.00</p>
+        </div>
+        <div class="product-card" onclick="window.location.href='#'">
+            <div class="product-background" style="background-image: url('./Images/product6.jpg');">
+                <h3>Producto 6</h3>
+                <p>Precio: $35</p>
             </div>
-            <div class="product">
-                <a href="product7.html" target="_blank">Product 4</a>
-                <p>$19.00</p>
-            </div>
-            <div class="product">
-                <a href="product8.html" target="_blank">Product 5</a>
-                <p>$20.00</p>
-            </div>
-            <div class="product">
-                <a href="product9.html" target="_blank">Product 6</a>
-                <p>$23.00</p>
-            </div>
-            <div class="product">
-                <a href="product10.html" target="_blank">Product 7</a>
-                <p>$28.00</p>
-            </div>
-            <div class="product">
-                <a href="product11.html" target="_blank">Product 8</a>
-                <p>$26.00</p>
+        </div>
+        <div class="product-card" onclick="window.location.href='#'">
+            <div class="product-background" style="background-image: url('./Images/product7.jpg');">
+                <h3>Producto 7</h3>
+                <p>Precio: $40</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://discord.com">Discord</a> |
-                <a href="https://roblox.com">Roblox</a>
-            </div>
-            <p>&copy; 2023 CD Studios. All rights reserved.</p>
-        </div>
+    <footer>
+        <p>Conéctate con nosotros en <a href="#">Discord</a> | <a href="#">Roblox</a></p>
+        <p>&copy; 2024 CD Studios. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="./Javascript/scripts.js"></script>
+    <script src="./JavaScript/scripts.js"></script>
 </body>
 </html>
