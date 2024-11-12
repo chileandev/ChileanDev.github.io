@@ -19,6 +19,7 @@ body {
     align-items: center;
     padding: 15px 20px;
     background-color: #333;
+    position: relative;
 }
 
 .logo img {
@@ -38,14 +39,56 @@ nav a:hover {
     color: #00ff99;
 }
 
-/* Responsive logo */
+/* Menu toggle for mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Responsive logo and navigation */
 @media (max-width: 768px) {
     .logo img {
         height: 40px;
     }
 
-    nav {
-        display: none; /* Esconder navegación en móviles */
+    .navbar {
+        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .navbar a:hover {
+        background-color: #444;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar.active {
+        display: block;
     }
 }
 
@@ -168,7 +211,7 @@ nav a:hover {
 }
 
 .footer a {
-    color: #00ff99;
+    color: #ff6347;
     text-decoration: none;
     margin: 0 10px;
 }
@@ -185,22 +228,10 @@ nav a:hover {
     }
 
     .products-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .featured-product {
-        height: 200px;
+        height: 250px;
     }
-
-    .footer a {
-        display: block;
-        margin: 10px 0;
-    }
-}
-
-/* Animation for Product Carousel */
-@keyframes featuredFade {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
 }
