@@ -6,6 +6,41 @@ body {
     color: #333;
 }
 
+/* Productos en general */
+.product, .featured-product {
+    background-color: #f3f3f3;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover para productos en general */
+.product:hover, .featured-product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para productos destacados (fondo e imagenes) */
+.featured-products {
+    display: flex;
+    gap: 10px;
+    background-color: #d3d3d3; /* Fondo gris */
+    padding: 20px;
+}
+
+.featured-product {
+    flex: 1;
+    color: white;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Establece las imágenes de fondo para cada producto destacado */
+#product1 { background-image: url('./Images/featured1.jpg'); }
+#product2 { background-image: url('./Images/featured2.jpg'); }
+#product3 { background-image: url('./Images/featured3.jpg'); }
+
 /* Topbar with Logo Left, Sections Right */
 .topbar {
     background-color: #333;
