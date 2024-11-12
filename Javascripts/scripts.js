@@ -1,19 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const featuredProducts = document.querySelectorAll(".featured-product");
-    let currentIndex = 0;
+let currentProduct = 0;
+const products = document.querySelectorAll('.featured-product');
 
-    function showNextProduct() {
-        // Oculta todos los productos
-        featuredProducts.forEach(product => product.style.display = "none");
+function showNextProduct() {
+    products[currentProduct].style.display = 'none';
+    currentProduct = (currentProduct + 1) % products.length;
+    products[currentProduct].style.display = 'block';
+}
 
-        // Muestra el producto actual
-        featuredProducts[currentIndex].style.display = "block";
-
-        // Cambia al siguiente producto
-        currentIndex = (currentIndex + 1) % featuredProducts.length;
-    }
-
-    // Inicia el carrusel
-    showNextProduct();
-    setInterval(showNextProduct, 2000); // Cambia cada 2 segundos
-});
+setInterval(showNextProduct, 2000);
+showNextProduct();
