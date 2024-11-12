@@ -6,6 +6,14 @@ body {
     color: #333;
 }
 
+/* Logo */
+.logo img {
+    max-height: 40px;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
 /* Topbar */
 .topbar {
     display: flex;
