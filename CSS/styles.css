@@ -25,6 +25,9 @@ body {
 /* Logo */
 .logo img {
     max-height: 40px;
+    width: auto;
+    height: auto;
+    display: block;
 }
 
 /* Navigation Links */
