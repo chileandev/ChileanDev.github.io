@@ -245,11 +245,12 @@ body {
     margin-bottom: 20px;
 }
 
-.product-image {
+.product-img {
     width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 8px;
+    max-width: 400px; /* Ajusta el tamaño máximo para que no se vea demasiado grande */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 0 auto; /* Centra la imagen */
+    display: block;
 }
 
 .product-info {
@@ -354,7 +355,9 @@ body {
     .product-info {
         text-align: left;
     }
-
+    .product-img {
+        max-width: 90%; /* Ajusta al 90% del ancho del contenedor */
+    }
     .btn-obtain {
         width: 100%;
         padding: 15px;
