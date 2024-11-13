@@ -17,7 +17,7 @@ body {
 /* Estilo de la barra de navegación */
 .navbar {
     width: 100%;
-    background-color: #2e2e2e;
+    background-color: #272727;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -134,7 +134,7 @@ body {
 /* Estilos del Footer */
 .footer {
     width: 100%;
-    background-color: #2e2e2e;
+    background-color: #272727;
     color: #ffffff;
     padding: 20px;
     margin-top: 40px;
