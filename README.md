@@ -48,6 +48,12 @@ Si estás interesado en contratarme para un proyecto o tienes alguna consulta, p
 
 Gracias por visitar mi portafolio. Si te interesa colaborar o necesitas alguna de mis soluciones para Roblox, no dudes en contactarme. ¡Espero trabajar contigo pronto!
 
+## Créditos
+
+Para ver los créditos de este proyecto y un agradecimiento a las personas involucradas, haz clic en el siguiente enlace:
+
+[Créditos](CREDITS.md)
+
 ---
 
 *¡Sígueme en mis redes sociales para estar al tanto de mis nuevos proyectos y recursos!*
