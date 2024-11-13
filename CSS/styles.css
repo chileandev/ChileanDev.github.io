@@ -105,7 +105,7 @@ body {
 .section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #32CD32;
+    color: #00a2ff;
 }
 .section p, .section ul {
     font-size: 1.1rem;
@@ -129,6 +129,52 @@ body {
 .menu-icon.active span:nth-child(3) {
     transform: rotate(-45deg);
     top: 10px;
+}
+
+/* Estilos del Footer */
+.footer {
+    width: 100%;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.footer-logo .logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.footer-text h3 {
+    font-size: 1.2rem;
+    color: #32CD32;
+    margin-bottom: 5px;
+}
+
+.footer-text p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #b3b3b3;
+    max-width: 600px;
+}
+
+.footer-copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #b3b3b3;
+    padding-top: 10px;
 }
 
 /* Diseño responsive */
@@ -162,6 +208,13 @@ body {
     }
     .menu-icon {
         display: block;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-logo, .footer-text {
+        text-align: center;
     }
 }
 
