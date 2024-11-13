@@ -177,6 +177,53 @@ body {
     padding-top: 10px;
 }
 
+/* Estilos generales para la sección de Assets */
+#assets {
+    padding: 20px;
+    text-align: center;
+}
+
+.asset-item {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.asset-item:hover {
+    transform: scale(1.05);
+}
+
+.asset-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.asset-info {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.asset-info h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.asset-info p {
+    margin: 10px 0;
+}
+
+.asset-description {
+    font-size: 14px;
+    color: #ccc;
+}
+
 /* Diseño responsive */
 @media (max-width: 768px) {
     .navbar-links {
@@ -215,6 +262,9 @@ body {
     }
     .footer-logo, .footer-text {
         text-align: center;
+    }
+    .asset-item {
+        width: 100%;
     }
 }
 
