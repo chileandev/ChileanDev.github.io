@@ -50,14 +50,9 @@ body {
     color: #32CD32;
 }
 
-/* Ocultar el menú en pantallas grandes */
+/* Icono de menú para móvil */
 .menu-icon {
     display: none;
-}
-
-/* Icono de menú */
-.menu-icon {
-    display: block;
     position: relative;
     width: 30px;
     height: 24px;
@@ -103,7 +98,7 @@ body {
 /* Diseño responsive */
 @media (max-width: 768px) {
     .navbar-links {
-        display: none;
+        display: none; /* Oculta los enlaces en pantallas pequeñas */
         flex-direction: column;
         gap: 20px;
         padding: 20px;
@@ -131,8 +126,11 @@ body {
     }
     .menu-icon {
         display: block;
-        cursor: pointer;
-        color: #ffffff;
-        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none;
     }
 }
