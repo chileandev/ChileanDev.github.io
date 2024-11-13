@@ -141,7 +141,7 @@ body {
     position: relative;
     bottom: 0;
     margin-top: 45px;
-    clear: both; /* Esto asegura que el footer no se desborde */
+    clear: both; 
 }
 
 .footer-content {
@@ -204,7 +204,7 @@ body {
 .asset-img img {
     width: 100%;
     height: auto;
-    border-bottom: 2px solid #0077ff; /* Línea verde entre la imagen y la info */
+    border-bottom: 2px solid #0077ff;
 }
 
 .asset-info {
@@ -217,7 +217,7 @@ body {
 .asset-info h2 {
     margin: 0;
     font-size: 24px;
-    color: #0077ff; /* Título en verde claro */
+    color: #0077ff; 
 }
 
 .asset-description {
@@ -247,10 +247,11 @@ body {
 
 .product-img {
     width: 100%;
-    max-width: 400px; /* Ajusta el tamaño máximo para que no se vea demasiado grande */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin: 0 auto; /* Centra la imagen */
+    max-width: 400px; 
+    height: auto; 
+    margin: 20px auto 0; 
     display: block;
+    border-radius: 10px; 
 }
 
 .product-info {
@@ -311,7 +312,7 @@ body {
 /* Diseño responsive */
 @media (max-width: 768px) {
     .navbar-links {
-        display: none; /* Oculta los enlaces en pantallas pequeñas */
+        display: none; 
         flex-direction: column;
         gap: 20px;
         padding: 20px;
@@ -356,7 +357,7 @@ body {
         text-align: left;
     }
     .product-img {
-        max-width: 90%; /* Ajusta al 90% del ancho del contenedor */
+        max-width: 90%; 
     }
     .btn-obtain {
         width: 100%;
