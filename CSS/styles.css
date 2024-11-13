@@ -201,11 +201,11 @@ body {
 .asset-img img {
     width: 100%;
     height: auto;
-    border-bottom: 2px solid #32CD32; /* Línea verde entre la imagen y la info */
+    border-bottom: 2px solid #0077ff; /* Línea verde entre la imagen y la info */
 }
 
 .asset-info {
-    background-color: #fff;
+    background-color: #313131;
     padding: 15px;
     text-align: left;
     color: #333;
@@ -214,12 +214,12 @@ body {
 .asset-info h2 {
     margin: 0;
     font-size: 24px;
-    color: #32CD32; /* Título en verde claro */
+    color: #0077ff; /* Título en verde claro */
 }
 
 .asset-description {
     font-size: 14px;
-    color: #777;
+    color: #313131;
 }
 
 .asset-info p {
