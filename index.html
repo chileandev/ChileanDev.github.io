@@ -3,82 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CD Studios</title>
+    <title>ChileanDev</title>
     <link rel="stylesheet" href="./CSS/styles.css">
 </head>
 <body>
-    <!-- Topbar -->
-    <header class="topbar">
-        <div class="logo">
-            <img src="./Images/logo.png" alt="CD Studios Logo">
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <a href="./Images/logo.png" class="navbar-logo">Logo</a>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="#">Home</a>
+            <a href="#">Assets</a>
+            <a href="#">Custom</a>
+            <a href="#">Commissions</a>
+            <a href="#">Contact</a>
+            <button class="copyright-button">©</button>
         </div>
-        <nav class="navbar">
-            <a href="#">Inicio</a>
-            <a href="#">Productos</a>
-            <a href="#">Servicios</a>
-            <a href="#">Contacto</a>
-        </nav>
-        <div class="menu-toggle" id="menu-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </header>
+        <!-- Icono de menú para móvil -->
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </nav>
 
-    <!-- Featured Products (Productos destacados) -->
-    <section class="featured-products">
-        <div class="featured-product active" style="background-image: url('./Images/featured1.jpg');">
-            <h2>Producto 1</h2>
-            <p>Descripción breve del producto 1</p>
-        </div>
-        <div class="featured-product" style="background-image: url('./Images/featured2.jpg');">
-            <h2>Producto 2</h2>
-            <p>Descripción breve del producto 2</p>
-        </div>
-        <div class="featured-product" style="background-image: url('./Images/featured3.jpg');">
-            <h2>Producto 3</h2>
-            <p>Descripción breve del producto 3</p>
-        </div>
-    </section>
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <h1>ChileanDev</h1>
+        <p>Aquí puedes encontrar mis modelos, scripts de Roblox Studio, y más información sobre mis servicios y comisiones.</p>
+    </div>
 
-    <!-- Main Products (Productos principales) -->
-    <section class="products-section">
-        <h2>Artículos en Venta</h2>
-        <div class="products-grid">
-            <a href="#product1" class="product-card" style="background-image: url('./Images/product1.jpg');">
-                <div class="overlay">
-                    <h3>Producto 1</h3>
-                    <p>$50.00</p>
-                </div>
-            </a>
-            <a href="#product2" class="product-card" style="background-image: url('./Images/product2.jpg');">
-                <div class="overlay">
-                    <h3>Producto 2</h3>
-                    <p>$60.00</p>
-                </div>
-            </a>
-            <a href="#product3" class="product-card" style="background-image: url('./Images/product3.jpg');">
-                <div class="overlay">
-                    <h3>Producto 3</h3>
-                    <p>$70.00</p>
-                </div>
-            </a>
-            <a href="#product4" class="product-card" style="background-image: url('./Images/product4.jpg');">
-                <div class="overlay">
-                    <h3>Producto 4</h3>
-                    <p>$80.00</p>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 CD Studios. Todos los derechos reservados.</p>
-        <a href="https://discord.com" target="_blank">Soporte en Discord</a>
-        <a href="https://www.roblox.com" target="_blank">Visítanos en Roblox</a>
-    </footer>
-
-    <script src="./Javascript/scripts.js"></script>
+    <!-- Script para alternar el menú en móvil -->
+    <script>
+        function toggleMenu() {
+            const navbarLinks = document.getElementById("navbarLinks");
+            navbarLinks.classList.toggle("mobile");
+        }
+    </script>
 </body>
 </html>
