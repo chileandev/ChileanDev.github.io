@@ -293,6 +293,60 @@ body {
     text-align: left;
 }
 
+#commissions-page {
+    padding: 20px;
+    background-color: #121212;
+    text-align: center;
+}
+
+.commissions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.commission-item {
+    background-color: #313131;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.commission-item:hover {
+    transform: translateY(-10px);
+}
+
+.commission-item h2 {
+    color: #0077ff; /* Verde Claro */
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.btn-contact {
+    display: inline-block;
+    background-color: #32CD32;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #28a745;
+}
+
 /* Botón de obtener */
 .btn-obtain {
     background-color: #0077ff;
@@ -367,6 +421,7 @@ body {
         flex-direction: column;
         align-items: center;
     }
+    
 }
 
 @media (min-width: 769px) {
