@@ -1,11 +1,6 @@
-let currentProduct = 0;
-const products = document.querySelectorAll('.featured-product');
-
-function showNextProduct() {
-    products[currentProduct].style.display = 'none';
-    currentProduct = (currentProduct + 1) % products.length;
-    products[currentProduct].style.display = 'block';
+function toggleMenu() {
+    const navbarLinks = document.getElementById("navbarLinks");
+    const menuIcon = document.getElementById("menuIcon");
+    navbarLinks.classList.toggle("mobile");
+    menuIcon.classList.toggle("active");
 }
-
-setInterval(showNextProduct, 2000);
-showNextProduct();
