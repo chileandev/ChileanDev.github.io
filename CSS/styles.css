@@ -95,6 +95,42 @@ body {
     text-align: center;
 }
 
+/* Secciones */
+.section {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #32CD32;
+}
+.section p, .section ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #b3b3b3;
+}
+.section ul {
+    list-style-type: square;
+    text-align: left;
+    padding: 0 20px;
+}
+
+/* Estilo para el botón de menú en móvil */
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+}
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
 /* Diseño responsive */
 @media (max-width: 768px) {
     .navbar-links {

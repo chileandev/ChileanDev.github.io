@@ -9,20 +9,17 @@
 <body>
     <!-- Barra de navegación -->
     <nav class="navbar">
-        <!-- Logo -->
         <a href="#" class="navbar-logo">
             <img src="./Images/logo.png" alt="Logo" class="logo-img">
         </a>
-        <!-- Enlaces de navegación -->
         <div class="navbar-links" id="navbarLinks">
-            <a href="#">Home</a>
-            <a href="#">Assets</a>
-            <a href="#">Custom</a>
-            <a href="#">Commissions</a>
-            <a href="#">Contact</a>
-            <a href="#">© Copyright</a>
+            <a href="index.html">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="#copyright">© Copyright</a>
         </div>
-        <!-- Icono de menú solo para móvil -->
         <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -30,11 +27,42 @@
         </div>
     </nav>
 
-    <!-- Contenido principal -->
-    <div class="main-content">
-        <h1>Bienvenido a Mi Portafolio</h1>
-        <p>Aquí puedes encontrar mis modelos, scripts de Roblox Studio, y más información sobre mis servicios y comisiones.</p>
-    </div>
+    <!-- Sección Home -->
+    <section id="home" class="section">
+        <div class="main-content">
+            <h1>Bienvenido a ChileanDev Page</h1>
+            <p>Aquí puedes encontrar mis modelos, scripts de Roblox Studio, y más información sobre mis servicios y comisiones.</p>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="about" class="section">
+        <h2>Sobre Mí</h2>
+        <p>Soy un desarrollador apasionado especializado en Roblox Studio, con experiencia en modelado y scripting para proyectos personalizados.</p>
+    </section>
+
+    <!-- Sección de Habilidades -->
+    <section id="skills" class="section">
+        <h2>Habilidades y Servicios</h2>
+        <ul>
+            <li>Modelado de Entornos 3D</li>
+            <li>Scripting en Lua</li>
+            <li>Desarrollo de mecánicas de juego</li>
+            <li>Comisiones personalizadas</li>
+        </ul>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section id="projects" class="section">
+        <h2>Proyectos Destacados</h2>
+        <p>He trabajado en varios proyectos personalizados en Roblox, creando modelos y sistemas a medida para mis clientes.</p>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="section">
+        <h2>Contacto</h2>
+        <p>¿Tienes alguna idea en mente? ¡Hablemos! Puedes contactarme para comisiones o consultas.</p>
+    </section>
 
     <!-- Script para alternar el menú en móvil -->
     <script>
