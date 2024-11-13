@@ -297,6 +297,7 @@ body {
     padding: 20px;
     background-color: #121212;
     text-align: center;
+    margin-top: 70px;
 }
 
 .commissions-container {
@@ -421,7 +422,7 @@ body {
         flex-direction: column;
         align-items: center;
     }
-    
+
 }
 
 @media (min-width: 769px) {
