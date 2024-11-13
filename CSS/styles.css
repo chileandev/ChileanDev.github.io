@@ -5,14 +5,14 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
 body {
     background-color: #121212;
     color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
-} 
+}
+
 /* Estilo de la barra de navegación */
 .navbar {
     width: 100%;
@@ -27,10 +27,12 @@ body {
     z-index: 1000;
 }
 .navbar-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #32CD32; /* Verde claro */
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.logo-img {
+    height: 40px; /* Ajusta el tamaño del logo según prefieras */
+    width: auto;
 }
 .navbar-links {
     display: flex;
@@ -46,19 +48,9 @@ body {
     color: #32CD32;
 }
 
-/* Estilo del botón copyright */
-.copyright-button {
-    background-color: #32CD32;
-    color: #1f1f1f;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-.copyright-button:hover {
-    background-color: #2e8b57;
+/* Ocultar el icono de menú en pantallas grandes */
+.menu-icon {
+    display: none;
 }
 
 /* Estilo del contenedor principal */
@@ -80,6 +72,9 @@ body {
         gap: 10px;
         padding: 10px;
         background-color: #1f1f1f;
+        position: absolute;
+        top: 60px; /* Ajusta la posición del menú desplegable */
+        width: 100%;
     }
     .navbar-links.mobile a {
         text-align: center;
