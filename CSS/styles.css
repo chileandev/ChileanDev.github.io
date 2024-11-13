@@ -17,7 +17,7 @@ body {
 /* Estilo de la barra de navegación */
 .navbar {
     width: 100%;
-    background-color: #1f1f1f;
+    background-color: #2e2e2e;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -134,7 +134,7 @@ body {
 /* Estilos del Footer */
 .footer {
     width: 100%;
-    background-color: #1f1f1f;
+    background-color: #2e2e2e;
     color: #ffffff;
     padding: 20px;
     margin-top: 40px;
@@ -159,7 +159,7 @@ body {
 
 .footer-text h3 {
     font-size: 1.2rem;
-    color: #32CD32;
+    color: #00a2ff;
     margin-bottom: 5px;
 }
 
