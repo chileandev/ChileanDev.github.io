@@ -23,7 +23,11 @@
             <a href="#">© Copyright</a>
         </div>
         <!-- Icono de menú solo para móvil -->
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
     <!-- Contenido principal -->
@@ -36,7 +40,9 @@
     <script>
         function toggleMenu() {
             const navbarLinks = document.getElementById("navbarLinks");
+            const menuIcon = document.getElementById("menuIcon");
             navbarLinks.classList.toggle("mobile");
+            menuIcon.classList.toggle("active");
         }
     </script>
 </body>
