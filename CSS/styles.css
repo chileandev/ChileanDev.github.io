@@ -233,7 +233,7 @@ body {
         flex-direction: column;
         gap: 20px;
         padding: 20px;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: #313131;
         backdrop-filter: blur(5px);
         position: fixed;
         top: 0;
@@ -253,7 +253,7 @@ body {
     }
     .navbar-links.mobile a {
         font-size: 1.5rem;
-        color: #ffffff;
+        color: #313131;
     }
     .menu-icon {
         display: block;
