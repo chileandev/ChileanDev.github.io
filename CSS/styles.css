@@ -229,6 +229,84 @@ body {
     margin: 10px 0;
 }
 
+/* Página del producto */
+.product-page {
+    margin-top: 80px;
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.product-title {
+    font-size: 2rem;
+    color: #0077ff;
+    margin-bottom: 10px;
+}
+
+.product-details {
+    font-size: 1.2rem;
+}
+
+.product-price {
+    color: #0077ff;
+}
+
+.product-author {
+    font-size: 1rem;
+    color: #b3b3b3;
+}
+
+/* Descripción del producto */
+.product-description {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #b3b3b3;
+}
+
+.product-info-extra {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #b3b3b3;
+    max-width: 900px;
+    text-align: left;
+}
+
+/* Botón de obtener */
+.btn-obtain {
+    background-color: #0077ff;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.btn-obtain:hover {
+    background-color: #0077ff;
+}
+
 /* Diseño responsive */
 @media (max-width: 768px) {
     .navbar-links {
@@ -272,6 +350,18 @@ body {
     .asset-item {
         width: 100%;
         margin: 10px 0;
+    }
+    .product-info {
+        text-align: left;
+    }
+
+    .btn-obtain {
+        width: 100%;
+        padding: 15px;
+    }
+    .product-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
