@@ -366,7 +366,7 @@ body {
 
 /* Estilo de la sección de contacto */
 #contact-page {
-    padding: 80px 20px; /* Aumentamos el padding superior para evitar que toque la topbar */
+    padding: 80px 20px; 
     text-align: center;
     background-color: #313131;
 }
@@ -374,7 +374,7 @@ body {
 .contact-title {
     font-size: 2em;
     margin-bottom: 10px;
-    color: #333;
+    color: #666;
 }
 
 .contact-description {
@@ -388,7 +388,7 @@ body {
     padding: 20px;
     max-width: 500px;
     font-size: 1.1em;
-    color: #555;
+    color: #666;
     background-color: #383838;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -419,7 +419,7 @@ body {
 .contact-form label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
+    color: #666;
 }
 
 .contact-form input,
