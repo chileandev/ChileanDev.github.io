@@ -1,11 +1,58 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; URL=https://chileandev.store/wiki/">
-    <title>Redireccionando...</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  <link rel="stylesheet" href="./CSS/styles.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      text-align: center;
+    }
+    .error-container {
+      max-width: 600px;
+      padding: 20px;
+    }
+    .error-code {
+      font-size: 6em;
+      font-weight: bold;
+      color: #ff6b6b;
+    }
+    .error-message {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    .home-link {
+      text-decoration: none;
+      color: #fff;
+      background-color: #0077ff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .home-link:hover {
+      background-color: #0077ff;
+    }
+  </style>
 </head>
 <body>
-    <p>Redireccionando a <a href="https://chileandev.store/wiki/">https://chileandev.store/wiki/</a>...</p>
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <div class="error-message">¡Oops! La pagina que buscas no existe.</div>
+    <a href="/Home/" class="home-link">Ir al Inicio</a>
+  </div>
 </body>
+<script>
+    setTimeout(function() {
+      window.location.href = "/Home/";
+    }, 5000);
+  </script>
 </html>
