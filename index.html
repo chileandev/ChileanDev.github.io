@@ -8,4 +8,10 @@
 <body>
     <p>Si no eres redirigido automáticamente, haz clic <a href="/home">aquí</a>.</p>
 </body>
+
+<script>
+    if (window.location.pathname === "/index.html") {
+      window.location.replace("/home");
+    }
+  </script>
 </html>
