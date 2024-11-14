@@ -459,12 +459,12 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+    background-color: #313131;
 }
 
 .credits-section h1 {
     text-align: center;
-    color: #333;
+    color: #fff;
 }
 
 .credits-content h2 {
@@ -479,7 +479,7 @@ body {
 
 .credits-content p {
     font-size: 1rem;
-    color: #555;
+    color: #fff;
     margin-top: 15px;
 }
 
