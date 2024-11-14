@@ -4,14 +4,137 @@
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="0; URL='https://chileandev.store/Home'" />
     <title>Redireccionando...</title>
+    <style>
+        /* Estilo general */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Estilo de la barra de navegación */
+        .navbar {
+            width: 100%;
+            background-color: #222222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .navbar-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .navbar-links a:hover {
+            color: #0077ff;
+        }
+
+        /* Contenedor principal */
+        .main-content {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .message {
+            background-color: #313131;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .message p {
+            font-size: 1.2rem;
+            color: #b3b3b3;
+        }
+
+        .message a {
+            color: #0077ff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .message a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos del footer */
+        .footer {
+            width: 100%;
+            background-color: #222222;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        .footer-text {
+            font-size: 0.9rem;
+            color: #b3b3b3;
+        }
+    </style>
 </head>
 <body>
-    <p>Si no eres redirigido automáticamente, haz clic <a href="/Home">aquí</a>.</p>
-</body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img class="logo-img" src="logo.png" alt="Logo"> <!-- Cambia 'logo.png' por tu logo -->
+        </div>
+        <div class="navbar-links">
+            <a href="/">Inicio</a>
+            <a href="/Home">Home</a>
+        </div>
+    </div>
 
-<script>
-    if (window.location.pathname === "/index.html") {
-      window.location.replace("/Home");
-    }
-  </script>
+    <div class="main-content">
+        <div class="message">
+            <p>Estás siendo redirigido automáticamente. Si no eres redirigido, haz clic <a href="/Home">aquí</a>.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>© 2024 Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        if (window.location.pathname === "/index.html") {
+            window.location.replace("/Home");
+        }
+    </script>
+</body>
 </html>
