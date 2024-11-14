@@ -5,17 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página No Encontrada</title>
     <link rel="stylesheet" href="./CSS/styles.css">
-    
+
 </head>
 <body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <a class="navbar-logo">
+            <img src="./Images/logo.png" alt="Logo" class="logo-img">
+        </a>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="./Home/">Home</a>
+            <a href="./Assets/">Assets</a>
+            <a href="./Comissions/">Comissions</a>
+            <a href="./Credits/">Credits</a>
+            <a href="./Contact/">Contact</a>
+            <a href="./Copyright/">©</a>
+        </div>
+        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
     <div class="container">
         <h1>404</h1>
         <p>Lo siento, no hemos podido encontrar la página que estás buscando.</p>
         <p>Intenta ir a la <a href="/Home">página de inicio</a> o vuelve a intentar más tarde.</p>
     </div>
 
-    <div class="footer">
-        <p>&copy; 2024 ChileanDev. Todos los derechos reservados.</p>
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="../Images/logo.png" alt="Logo" class="logo-img">
+        </div>
+        <div class="footer-text">
+            <h3>Creado por @IamChileanDev</h3>
+            <p>Desde 2019, ofrecemos servicios profesionales para desarrolladores de Roblox, que incluyen códigos fuente, interfaces, sonidos, kits, sistemas y soluciones de inteligencia artificial, tanto gratuitos como de pago.</p>
+        </div>
     </div>
+    <div class="footer-copyright">
+        <p>© Copyright 2024 ChileanDev. Todos los Derechos reservados.</p>
+    </div>
+</footer>
+
+    <script src="../Javascripts/scripts.js"></script>
+
 </body>
 </html>
