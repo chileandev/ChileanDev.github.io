@@ -364,6 +364,82 @@ body {
     background-color: #0077ff;
 }
 
+#contact-page {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.contact-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.contact-description {
+    margin-bottom: 30px;
+    color: #313131;
+}
+
+.contact-info {
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: #313131;
+}
+
+.contact-info a {
+    color: #0077ff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el formulario de contacto */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #0077ff;
+}
+
+.btn-send {
+    display: inline-block;
+    background-color: #0077ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn-send:hover {
+    background-color: #0077ff;
+}
+
 /* Diseño responsive */
 @media (max-width: 768px) {
     .navbar-links {
