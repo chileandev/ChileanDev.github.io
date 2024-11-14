@@ -47,7 +47,7 @@ body {
     transition: color 0.3s;
 }
 .navbar-links a:hover {
-    color: #0077ff;
+    color: #0099ff;
 }
 
 /* Icono de menú para móvil */
@@ -105,7 +105,7 @@ body {
 .section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #00a2ff;
+    color: #0099ff;
 }
 .section p, .section ul {
     font-size: 1.1rem;
@@ -162,7 +162,7 @@ body {
 
 .footer-text h3 {
     font-size: 1.2rem;
-    color: #00a2ff;
+    color: #0099ff;
     margin-bottom: 5px;
 }
 
@@ -195,14 +195,14 @@ body {
 /* Estilo para la sección de la wiki */
 h2 {
     font-size: 2rem;
-    color: #0077cc; 
+    color: #0099ff; 
     text-align: center;
     margin-top: 80px;
 }
 
 p {
     font-size: 1.1rem;
-    color: #777;
+    color: #fff;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -215,7 +215,7 @@ p {
 
 .info-button {
     display: inline-block;
-    background-color: #0077cc;
+    background-color: #0099ff;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -226,11 +226,11 @@ p {
 }
 
 .info-button:hover {
-    background-color: #005fa3;
+    background-color: #0083da;
 }
 
 .info-button:active {
-    background-color: #004482;
+    background-color: #0083da;
 }
 
 
