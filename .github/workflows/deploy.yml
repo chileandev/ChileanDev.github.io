@@ -1,0 +1,42 @@
+name: Deploy Subdomains
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # Pasos para cada subdominio
+      - name: Deploy wiki subdomain
+        if: contains(github.ref_name, 'wiki')
+        run: |
+          cp -r wiki/* .
+          echo "wiki.chileandev.store" > CNAME
+
+      - name: Deploy API subdomain
+        if: contains(github.ref_name, 'api')
+        run: |
+          cp -r api/* .
+          echo "api.chileandev.store" > CNAME
+
+      - name: Deploy Support subdomain
+        if: contains(github.ref_name, 'support')
+        run: |
+          cp -r support/* .
+          echo "support.chileandev.store" > CNAME
+
+      # Agrega cualquier otro subdominio aquí
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
