@@ -47,7 +47,7 @@ body {
     transition: color 0.3s;
 }
 .navbar-links a:hover {
-    color: #32CD32;
+    color: #0077ff;
 }
 
 /* Icono de menú para móvil */
