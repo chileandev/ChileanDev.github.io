@@ -193,67 +193,48 @@ body {
 }
 
 /* Estilo para la sección de la wiki */
-h2, h3  {
-    font-size: 2rem;
+h2, h3, h4 {
     color: #0099ff; 
-    text-align: center;
-    margin-top: 80px;
-    margin-bottom: 20px;
 }
 
-p {
-    font-size: 1.1rem;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* Listas de enlaces */
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    font-size: 1.1rem;
-    margin: 10px 0;
-}
-
-ul li a {
-    color: #0099ff;
+.wiki-buttons a {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #0099ff;
+    color: white;
+    border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-ul li a:hover {
-    text-decoration: underline;
+.wiki-buttons a:hover {
+    background-color: #0099ff;
 }
 
-/* Estilo para los botones de navegación */
-.wiki-buttons {
-    text-align: center;
-    margin-bottom: 50px;
+.wiki-content {
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.wiki-content ul {
+    margin-left: 20px;
 }
 
 .info-button {
-    display: inline-block;
     background-color: #0099ff;
-    color: white;
     padding: 10px 20px;
-    text-decoration: none;
+    color: white;
     border-radius: 5px;
-    margin: 10px;
+    text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .info-button:hover {
-    background-color: #0083da;
+    background-color: #0099ff;
 }
-
-.info-button:active {
-    background-color: #0083da;
-}
-
 
 /* Diseño responsive */
 @media (max-width: 768px) {
