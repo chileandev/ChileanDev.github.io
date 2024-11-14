@@ -182,7 +182,7 @@ body {
 
 /* Contenido principal de la Wiki */
 .wiki-content {
-    margin-top: 80px; /* Ajusta según la altura de la topbar */
+    margin-top: 80px; 
     padding: 20px;
     max-width: 900px;
     margin-left: auto;
@@ -192,32 +192,47 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.wiki-content h2 {
-    color: #0077cc;
+/* Estilo para la sección de la wiki */
+h2 {
     font-size: 2rem;
+    color: #0077cc; 
+    text-align: center;
     margin-top: 20px;
 }
 
-.wiki-content p {
+p {
     font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.wiki-content ul {
-    margin-left: 20px;
-    list-style-type: disc;
+/* Estilo para los botones de navegación */
+.wiki-buttons {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.wiki-content a {
-    color: #0077cc;
+.info-button {
+    display: inline-block;
+    background-color: #0077cc;
+    color: white;
+    padding: 10px 20px;
     text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
     font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-.wiki-content a:hover {
-    text-decoration: underline;
+.info-button:hover {
+    background-color: #005fa3;
 }
+
+.info-button:active {
+    background-color: #004482;
+}
+
 
 /* Diseño responsive */
 @media (max-width: 768px) {
