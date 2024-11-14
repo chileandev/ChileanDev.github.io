@@ -372,7 +372,7 @@ body {
         gap: 20px;
         padding: 20px;
         background-color: #313131;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(10px);
         position: fixed;
         top: 0;
         left: 0;
@@ -391,7 +391,7 @@ body {
     }
     .navbar-links.mobile a {
         font-size: 1.5rem;
-        color: #313131;
+        color: #ffffff;
     }
     .menu-icon {
         display: block;
