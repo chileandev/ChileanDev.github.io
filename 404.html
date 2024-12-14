@@ -11,34 +11,51 @@
         <link rel="icon" href="./Images/logo.png" type="image/png">
         <link rel="stylesheet" href="./CSS/styles.css">
     </head>
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+    }
+    h1 {
+      font-size: 6rem;
+      margin: 0;
+      color: #ff6f61;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff6f61;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    a:hover {
+      background-color: #ff4a3a;
+    }
+  </style>
+</head>
 <body>
-
-    <!-- Barra de navegación -->
-    <nav class="navbar">
-        <a class="navbar-logo">
-            <img src="./Images/logo.png" alt="Logo" class="logo-img">
-        </a>
-        <div class="navbar-links" id="navbarLinks">
-            <a href="./Home/">Home</a>
-            <a href="./Assets/">Assets</a>
-            <a href="./Comissions/">Comissions</a>
-            <a href="./Credits/">Credits</a>
-            <a href="./Contact/">Contact</a>
-            <a href="./Copyright/">©</a>
-        </div>
-        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-
-    <div class="container">
-        <h1>404</h1>
-        <p>Lo siento, no hemos podido encontrar la página que estás buscando.</p>
-        <p>Intenta ir a la <a href="/Home">página de inicio</a> o vuelve a intentar más tarde.</p>
-    </div>
-
+  <div class="container">
+    <h1>Oops!</h1>
+    <p>404 - Página no encontrada</p>
+    <p>La página que estás buscando no existe o ha sido movida.</p>
+    <a href="/">Ir al Inicio</a>
+  </div>
+    
    <!-- Footer -->
    <footer class="footer">
     <div class="footer-content">
