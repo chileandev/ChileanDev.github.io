@@ -1,0 +1,29 @@
+name: OpenAI Proxy
+
+on:
+  workflow_dispatch:
+  repository_dispatch: # Permite recibir Webhooks
+    types:
+      - api_request
+
+jobs:
+  handle-api:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ejecutar llamada a la API
+        run: |
+          curl -X POST https://api.openai.com/v1/chat/completions \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+            -d '{
+              "model": "gpt-3.5-turbo",
+              "messages": [{"role": "user", "content": "'${{ github.event.client_payload.message }}'"}],
+              "max_tokens": 150,
+              "temperature": 0.7
+            }' > response.json
+          echo "::set-output name=api_response::$(cat response.json | jq -r '.choices[0].message.content')"
+
+      - name: Salida de respuesta
+        run: echo "API Response: ${{ steps.output.api_response }}"
+        id: response
