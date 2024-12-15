@@ -1,135 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chat - Asistente de Programación</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        #chat-box {
-            width: 90%;
-            max-width: 800px;
-            margin: auto;
-            border: 1px solid #ddd;
-            padding: 10px;
-        }
-        #chat-window {
-            height: 400px;
-            overflow-y: scroll;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #ddd;
-            padding: 10px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-        }
-        button {
-            padding: 10px;
-            background-color: #32CD32;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #28A745;
-        }
-        .message {
-            margin-bottom: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat con IA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    #chat-box {
+      max-width: 600px;
+      margin: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    #chat-window {
+      height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .message {
+      margin-bottom: 10px;
+    }
+    #user-input {
+      width: calc(100% - 110px);
+      padding: 8px;
+      border: 1px solid #ddd;
+      margin-right: 10px;
+    }
+    button {
+      padding: 8px;
+      border: none;
+      background-color: #32CD32;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #28A745;
+    }
+  </style>
 </head>
 <body>
-    <div id="chat-box">
-        <h1>Asistente de Programación con IA</h1>
-        <div id="chat-window"></div>
-        <input type="text" id="user-input" placeholder="Escribe tu pregunta..." autofocus />
-        <button onclick="sendMessage()">Enviar</button>
-    </div>
+  <div id="chat-box">
+    <h1>Chat con IA</h1>
+    <div id="chat-window"></div>
+    <input id="user-input" type="text" placeholder="Escribe tu mensaje..." />
+    <button onclick="sendMessage()">Enviar</button>
+  </div>
 
-    <script>
-        // Recuperar las conversaciones guardadas
-        function loadMessages() {
-            const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-            messages.forEach(msg => {
-                displayMessage(msg.text, msg.sender);
-            });
-        }
+  <script>
+    const chatWindow = document.getElementById("chat-window");
+    const userInput = document.getElementById("user-input");
 
-        // Guardar los mensajes en localStorage
-        function saveMessages(message, sender) {
-            let messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-            messages.push({ text: message, sender: sender });
-            localStorage.setItem('chatMessages', JSON.stringify(messages));
-        }
+    // Mostrar mensaje en el chat
+    function displayMessage(sender, message) {
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("message");
+      messageDiv.textContent = `${sender}: ${message}`;
+      chatWindow.appendChild(messageDiv);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
 
-        const userInputElement = document.getElementById('user-input');
-        const chatWindow = document.getElementById('chat-window');
+    // Enviar el mensaje al servidor
+    async function sendMessage() {
+      const message = userInput.value;
+      if (!message.trim()) return;
 
-        // Función para enviar el mensaje
-        async function sendMessage() {
-            const message = userInputElement.value;
-            if (message.trim() === "") return;
+      // Mostrar el mensaje del usuario
+      displayMessage("Tú", message);
 
-            // Mostrar mensaje del usuario
-            displayMessage(message, 'user');
-            saveMessages(message, 'user');
-            userInputElement.value = '';
+      // Enviar solicitud a GitHub Actions
+      const response = await fetch("https://api.github.com/repos/chileandev/ChileanDev/dispatches", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `token GITHUB_PERSONAL_ACCESS_TOKEN`, // Token personal de GitHub
+        },
+        body: JSON.stringify({
+          event_type: "api_request",
+          client_payload: { message },
+        }),
+      });
 
-            // Llamada a la función de IA
-            const aiResponse = await getAIResponse(message);
+      if (response.ok) {
+        const result = await response.json();
+        displayMessage("IA", result.api_response || "Error en la respuesta.");
+      } else {
+        displayMessage("IA", "Error al conectar con la API.");
+      }
 
-            // Mostrar respuesta de la IA
-            displayMessage(aiResponse, 'ai');
-            saveMessages(aiResponse, 'ai');
-        }
-
-        // Mostrar el mensaje en el chat
-        function displayMessage(message, sender) {
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('message');
-            messageElement.classList.add(sender);
-            messageElement.textContent = `${sender === 'user' ? 'Tú' : 'IA'}: ${message}`;
-            chatWindow.appendChild(messageElement);
-            chatWindow.scrollTop = chatWindow.scrollHeight;
-        }
-
-        // Función para obtener respuesta de la IA usando la API de OpenAI
-        async function getAIResponse(message) {
-            const API_KEY = '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'; // Reemplaza con tu clave de API de OpenAI
-
-            const response = await fetch('https://api.openai.com/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${API_KEY}`,
-                },
-                body: JSON.stringify({
-                    model: 'gpt-3.5-turbo', // Utiliza el modelo de GPT-3.5 o GPT-4
-                    messages: [{ role: 'user', content: message }],
-                    max_tokens: 150,  // Limita la longitud de la respuesta
-                    temperature: 0.7  // Controla la creatividad de la respuesta
-                })
-            });
-
-            const data = await response.json();
-            console.log(data);  // Muestra la respuesta de la API para depurar el error
-
-            if (data.choices && data.choices[0]) {
-                return data.choices[0].message.content.trim(); // Devuelve la respuesta generada
-            } else {
-                return "Lo siento, no pude generar una respuesta.";
-            }
-        }
-
-        // Cargar mensajes cuando la página se recarga
-        window.onload = function() {
-            loadMessages();
-        };
-    </script>
+      // Limpiar la entrada del usuario
+      userInput.value = "";
+    }
+  </script>
 </body>
 </html>
