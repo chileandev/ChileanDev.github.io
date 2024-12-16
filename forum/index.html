@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum | ChileanDev</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        /* Barra superior */
+        .topbar {
+            width: 100%;
+            height: 60px;
+            background-color: #0055cc;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .topbar .logo {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .topbar .menu-icon {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer;
+        }
+        .topbar .avatar {
+            display: flex;
+            align-items: center;
+        }
+        .topbar .avatar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* Menú lateral para móvil */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            width: 250px;
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            transition: left 0.3s ease;
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .topbar .menu-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Superior -->
+    <div class="topbar">
+        <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+        <div class="logo">ChileanDev Forum</div>
+        <div class="avatar">
+            <img src="https://www.roblox.com/headshot-thumbnail/image?userId=USER_ID&width=420&height=420&format=png" alt="Avatar del Usuario">
+        </div>
+    </div>
+
+    <!-- Menú Lateral -->
+    <div class="sidebar" id="sidebar">
+        <a href="#seccion1">Sección 1</a>
+        <a href="#seccion2">Sección 2</a>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div style="padding: 80px 20px; text-align: center;">
+        <h1>Bienvenido al Foro de ChileanDev</h1>
+        <p>Para entrar, inicia sesión con tu cuenta de Roblox.</p>
+        <button onclick="login()">Iniciar Sesión con Roblox</button>
+    </div>
+
+    <script>
+        // Menú lateral
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // Login
+        function login() {
+            window.location.href = "/api/login"; // Redirigir a la ruta de autenticación
+        }
+    </script>
+
+</body>
+</html>
