@@ -1,41 +1,63 @@
 const express = require("express");
-const jwt = require("jsonwebtoken");
+const session = require("express-session");
+const passport = require("passport");
+const OAuth2Strategy = require("passport-oauth2");
 const axios = require("axios");
 
 const router = express.Router();
-const JWT_SECRET = process.env.JWT_SECRET || "secret"; // Cambiar a un secreto fuerte en producción
 
-// Simular base de datos
-const users = [];
+// Configura la sesión
+router.use(session({
+  secret: process.env.SECRET_KEY,
+  resave: false,
+  saveUninitialized: false,
+}));
 
-// Login con API de RoVer
-router.post("/login", async (req, res) => {
-  const { robloxUsername } = req.body;
-  if (!robloxUsername) return res.status(400).send("Username is required");
+// Configura Passport para OAuth2
+passport.use(new OAuth2Strategy({
+    authorizationURL: "https://apis.roblox.com/oauth/authorize",
+    tokenURL: "https://apis.roblox.com/oauth/token",
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    callbackURL: process.env.REDIRECT_URI,
+  },
+  async (accessToken, refreshToken, profile, done) => {
+    try {
+      // Llamada a la API de Roblox para obtener el perfil del usuario
+      const response = await axios.get("https://apis.roblox.com/users/v1/users/me", {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      });
 
-  // Llamada a la API de RoVer para verificar la cuenta
-  try {
-    const response = await axios.get(
-      `https://verify.roblox.com/v1/users/${robloxUsername}/details`
-    );
-    const userData = response.data;
-
-    // Generar token JWT
-    const token = jwt.sign({ userId: userData.id, username: userData.name }, JWT_SECRET, {
-      expiresIn: "7d",
-    });
-
-    // Simular guardar usuario
-    users.push({ id: userData.id, username: userData.name });
-    res.cookie("token", token, { httpOnly: true }).send({ success: true });
-  } catch (err) {
-    res.status(400).send("Error authenticating with Roblox API");
+      const user = response.data;
+      done(null, user);
+    } catch (error) {
+      done(error, null);
+    }
   }
+));
+
+// Serialización de usuario
+passport.serializeUser((user, done) => done(null, user));
+passport.deserializeUser((obj, done) => done(null, obj));
+
+router.use(passport.initialize());
+router.use(passport.session());
+
+// Ruta de Login con Roblox
+router.get("/login", passport.authenticate("oauth2"));
+
+// Callback después de la autenticación
+router.get("/callback", passport.authenticate("oauth2", {
+  failureRedirect: "/forum/login",
+}), (req, res) => {
+  res.redirect("/forum");
 });
 
 // Logout
-router.post("/logout", (req, res) => {
-  res.clearCookie("token").send({ success: true });
+router.get("/logout", (req, res) => {
+  req.logout(() => {
+    res.redirect("/forum/login");
+  });
 });
 
 module.exports = router;

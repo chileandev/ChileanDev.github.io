@@ -1,22 +1,23 @@
-require("dotenv").config();
 const express = require("express");
-const mongoose = require("mongoose");
-const cookieParser = require("cookie-parser");
+const authRoutes = require("./routes/auth");
+const forumRoutes = require("./routes/forum");
+const path = require("path");
+require("dotenv").config();
 
-// Configuración inicial
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
-app.use(express.static("public"));
 
-mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.error(err));
+// Configuración de EJS
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
-app.use("/auth", require("./routes/auth")); 
-app.use("/forum", require("./routes/forum")); 
+// Archivos estáticos
+app.use(express.static(path.join(__dirname, "public")));
 
-const PORT = process.env.PORT || 3008;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Rutas
+app.use("/forum", authRoutes);
+app.use("/forum", forumRoutes);
+
+// Iniciar servidor
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Servidor ejecutándose en http://localhost:${PORT}`));
+console.log(require('crypto').randomBytes(32).toString('hex'));

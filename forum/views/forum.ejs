@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChileanDev Forum</title>
+  <style>
+    img { border-radius: 50%; width: 40px; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <h2>ChileanDev Forum</h2>
+    <div>
+      <img src="<%= user.avatarUrl %>" alt="Avatar">
+      <span><%= user.name %></span>
+      <a href="/forum/logout">Cerrar Sesión</a>
+    </div>
+  </div>
+  <h3>Bienvenido al Foro, <%= user.name %>!</h3>
+</body>
+</html>
