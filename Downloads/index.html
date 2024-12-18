@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloads</title>
+  <style>
+    /* General reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212; /* Dark theme background */
+      color: #e0e0e0; /* Light text for dark background */
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #ffffff;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      color: #b0b0b0;
+    }
+
+    #downloads {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .download-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1em;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #121212;
+      background-color: #32CD32;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #28a428;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
+    footer a {
+      color: #32CD32;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive design */
+    @media (max-width: 600px) {
+      .button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bienvenido a la zona de Archivos</h1>
+    <p>Descargas a 1 solo click.</p>
+  </header>
+
+  <main>
+    <section id="downloads">
+      <h2>Descargas</h2>
+      <p>Selecciona el Archivo a instalar:</p>
+      <div class="download-buttons">
+        <a href="/archives/ev.apk" class="button" download>EV Loader</a>
+        <a href="/archives/8bp.apk" class="button" download>8 Ball Pool</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Powered by <a href="https://github.com/chileandev">ChileanDev</a> | All rights reserved.</p>
+  </footer>
+</body>
+</html>
